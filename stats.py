@@ -4,12 +4,25 @@ def count_words(text):
     return len(words_arr)
 
 def count_character_frequency(text):
-    frequency_dictionary = {}
+    character_frequency = {}
 
     for char in text.lower():
-        if char in frequency_dictionary:
-            frequency_dictionary[char] += 1
+        if char in character_frequency:
+            character_frequency[char] += 1
         else:
-            frequency_dictionary[char] = 1
+            character_frequency[char] = 1
     
-    return frequency_dictionary
+    return character_frequency
+
+def sorted_list_of_dictionary(character_frequency):
+    arr = []
+
+    for char in character_frequency:
+        arr.append(
+            {
+                "char": char,
+                "num": character_frequency[char]
+            }
+        )
+    
+    return arr

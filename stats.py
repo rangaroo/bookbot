@@ -14,7 +14,10 @@ def count_character_frequency(text):
     
     return character_frequency
 
-def sorted_list_of_dictionary(character_frequency):
+def sort_list(character_frequency):
+    def sort_on(dict):
+        return dict["num"]
+    
     arr = []
 
     for char in character_frequency:
@@ -25,4 +28,6 @@ def sorted_list_of_dictionary(character_frequency):
             }
         )
     
+    arr.sort(reverse=True, key=sort_on)
+
     return arr
